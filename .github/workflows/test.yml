@@ -14,3 +14,9 @@ jobs:
       - name: Hello World variable
         run: |
           echo '${{steps.hello_variables.outputs.h_output}}'
+      
+      - name: using variable
+        run: |
+          echo '${{secrets.USERNAME}}'
+          
+        
