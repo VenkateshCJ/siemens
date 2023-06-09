@@ -11,4 +11,9 @@ jobs:
      uses: actions/checkout@v2
     
     -name: Print Hello World
-     run: echo 'Hello world'
+     id: hello_variables
+     run: name = h_output::'Hello world'
+     
+     -name : Hello World variable 
+     run: | 
+      echo '${{steps.hello_variables.outputs.h_output}}'
