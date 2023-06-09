@@ -10,7 +10,7 @@ jobs:
       - name: Print Hello World
         id: hello_variables
         run: |
-          echo '::set-output name = h_output::Hello world'
+          echo '::set-output name=h_output::Hello world'
       - name: Hello World variable
         run: |
           echo '${{steps.hello_variables.outputs.h_output}}'
