@@ -1,19 +1,15 @@
-name : Hello World 
-
-on: [push]
-
+name: Hello World
+'on':
+  - push
 jobs:
-  build: 
+  build:
     runs-on: ubuntu-latest
-    
     steps:
-    -name : Checkout siemens
-     uses: actions/checkout@v2
-    
-    -name: Print Hello World
-     id: hello_variables
-     run: name = h_output::'Hello world'
-     
-     -name : Hello World variable 
-     run: | 
-      echo '${{steps.hello_variables.outputs.h_output}}'
+      - name: Checkout siemens
+        uses: actions/checkout@v2
+      - name: Print Hello World
+        id: hello_variables
+        run: 'name = h_output::''Hello world'''
+      - name: Hello World variable
+        run: |
+          echo '${{steps.hello_variables.outputs.h_output}}'
